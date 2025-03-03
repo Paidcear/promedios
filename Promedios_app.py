@@ -175,8 +175,8 @@ if st.sidebar.button("Generar Reporte General"):
         # Generar PDF con el ID del estudiante en el nombre del archivo
         pdf_file = generar_pdf(examen_final, tareas_total, actividades_total, complementos_total, complemento_extra, complemento_extra_examen, complemento_extra_tareas, promedio_final, actividades, id_estudiante)
 
-        # Permitir que el usuario descargue el reporte detallado
-        #with open(pdf_file, "rb") as file:
-            #st.sidebar.download_button("Descargar Reporte General", file, file_name=f"reporte_general_{id_estudiante}.pdf", mime="application/pdf")
+        #Permitir que el usuario descargue el reporte detallado
+        with open(pdf_file, "rb") as file:
+            st.sidebar.download_button("Descargar Reporte General", file, file_name=f"reporte_general_{id_estudiante}.pdf", mime="application/pdf")
     else:
         st.warning("Por favor ingresa el ID del estudiante antes de generar el reporte.")
