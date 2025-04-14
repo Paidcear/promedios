@@ -177,6 +177,6 @@ if st.sidebar.button("Generar Reporte General"):
 
         #Permitir que el usuario descargue el reporte detallado
         with open(pdf_file, "rb") as file:
-            st.sidebar.download_button("Descargar Reporte General", file, file_name=f"reporte_general_{id_estudiante}.pdf", mime="application/pdf")
+            st.sidebar.download_button("Descargar Reporte General", file, file_name=f"reporte_general_{id_estudiante}", mime="application/pdf")
     else:
         st.warning("Por favor ingresa el ID del estudiante antes de generar el reporte.")
